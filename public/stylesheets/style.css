@@ -43,6 +43,7 @@ nav {
   height: 40px;
   padding: 20px 0 0 10px;
   font-size: 18px;
+  margin-top: 10px;
 }
 
 nav li {
@@ -54,6 +55,7 @@ nav a {
   padding: 10px;
   margin: 0 10px;
   color: #fff;
+  text-decoration: none;
 }
 
 nav a.current, nav a:hover {
@@ -61,7 +63,23 @@ nav a.current, nav a:hover {
   color: #000;
 }
 
-a {
-  color: #00B7FF;
+.post a {
+  color: #666;
   text-decoration: none;
+}
+
+.meta {
+  padding: 7px;
+  border: 1px solid #ccc;
+  background-color: #ccc;
+  margin-bottom: 10px;
+}
+
+a.more {
+  display: block;
+  width: 80px;
+  background-color: #404137;
+  color: #fff;
+  padding: 10px;
+  margin-top: 20px;
 }

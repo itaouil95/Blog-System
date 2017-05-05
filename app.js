@@ -22,6 +22,9 @@ var users = require('./routes/users');
 // Express instance
 var app = express();
 
+// Make moment global function
+app.locals.moment = moment;
+
 // View's rendering engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
