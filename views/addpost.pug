@@ -29,3 +29,6 @@ block content
           option(value='Ilyass Taouil') Ilyass Taouil
           option(value='J.K.Rowling') J.K.Rowling
     input.btn.btn-default(name='submit', type='submit', value='Add')
+    script(src='/ckeditor/ckeditor.js')
+    script
+      | CKEDITOR.replace('body');
