@@ -13,7 +13,7 @@ block content
     hr
     if post.comments
       h3 Comments
-      each comment, i in post.comment
+      each comment, i in post.comments
         .comment
           p.comment-name #{comment.name}
           p.comment-body #{comment.body}
