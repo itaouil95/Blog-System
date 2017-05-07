@@ -9,3 +9,30 @@ block content
       |on #{moment(post.date).format("DD-MM-YY")}
     img(src='/images/' + post.mainImage)
     !=post.body
+    br
+    hr
+    if post.comments
+      h3 Comments
+      each comment, i in post.comment
+        .comment
+          p.comment-name #{comment.name}
+          p.comment-body #{comment.body}
+      br
+    h3 Add comment
+    if errors
+      ul.errors
+        each error, i in errors
+          li.alert.alert-danger #{error.msg}
+    form.comment-form(method="post", action="/posts/addcomment")
+      input(name='postid', type="hidden", value=post._id)
+      .form-group
+        label Name
+        input.form-control(name='name', type='text')
+      .form-group
+        label Email
+        input.form-control(name='email', type='text')
+      .form-group
+        label Body
+        textarea.form-control(name='body', type='text')
+      br
+      input.btn.btn-default(name='submit', type='submit', value='Add Comment')
