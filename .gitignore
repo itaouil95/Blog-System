@@ -93,4 +93,7 @@ Temporary Items
 localhost.*
 localhost_files/
 
+# Uploads
+public/images/
+
 # End of https://www.gitignore.io/api/osx,node

@@ -22,6 +22,10 @@ body {
   clear: both;
 }
 
+.post img {
+  width: 100%;
+}
+
 ul {
   padding: 0;
   margin: 0;
@@ -123,4 +127,9 @@ ul.success li {
   background-color: #dff0d8;
   border-color: #d6e9c6;
   list-style: none;
+}
+
+.post .meta a {
+  text-decoration: underline;
+  color: blue;
 }
