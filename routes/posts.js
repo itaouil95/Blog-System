@@ -9,6 +9,23 @@ var upload = multer({ dest: './public/images/' });
 var mongo = require('mongodb');
 var db    = require('monk')('localhost/nodeblog');
 
+// Fetch specif post (by id)
+router.get('/show/:id', function(req, res, next) {
+
+  // Get db collection
+  var db = req.db;
+  var posts = db.get('posts');
+
+  // Fetch data
+  posts.findById(req.params.id, function(err, post) {
+    res.render('show', {
+      'post': post
+    });
+  });
+
+});
+
+// Renders Posts
 router.get('/add', function(req, res, next) {
 
   // Get db collection
@@ -25,6 +42,7 @@ router.get('/add', function(req, res, next) {
 
 });
 
+// Adds Post to db
 router.post('/add', upload.single('mainImage'), function(req, res, next) {
 
   // Get form values
