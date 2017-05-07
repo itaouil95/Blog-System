@@ -3,7 +3,7 @@ var router = express.Router();
 
 // File upload stuff
 var multer = require('multer');
-var upload = multer({ dest: './uploads/' })
+var upload = multer({ dest: './public/images/' });
 
 // DB stuff
 var mongo = require('mongodb');
@@ -36,7 +36,7 @@ router.post('/add', upload.single('mainImage'), function(req, res, next) {
 
   // Check Image uploaded
   if (req.file) {
-    var mainImage = req.file.filenmame;
+    var mainImage = req.file.filename;
   }
   else {
     var mainImage = 'noImage.jpg';

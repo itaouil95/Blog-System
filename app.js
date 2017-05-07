@@ -8,12 +8,12 @@ var bodyParser   = require('body-parser');
 var flash        = require('connect-flash');
 var validator    = require('express-validator');
 var session      = require('express-session');
-var emessages    = require('express-messages');
+var messages     = require('express-messages');
 var moment       = require('moment');
 var mongo        = require('mongodb');
 var db           = require('monk')('localhost/nodeblog');
 var multer       = require('multer');
-var upload       = multer({ dest: './uploads/' })
+var upload       = multer({ dest: './public/images/' });
 
 // Routes module
 var index      = require('./routes/index');
@@ -25,6 +25,12 @@ var app = express();
 
 // Make moment global function
 app.locals.moment = moment;
+
+// Truncate text
+app.locals.truncateText = function(text, length) {
+  var truncatedText = text.substring(0, length);
+  return truncatedText;
+}
 
 // View's rendering engine setup
 app.set('views', path.join(__dirname, 'views'));
